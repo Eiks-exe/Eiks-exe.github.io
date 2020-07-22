@@ -1,0 +1,31 @@
+.bg-red {
+    background-color: rgb(201, 0, 0);
+}
+
+.clr-w {
+    color: #ffff;
+}
+
+.bd-purp {
+    border: 1px solid blueviolet;
+}
+
+.s-25 {
+    font-size: 25px;
+}
+.border-gray {
+    border-left: 1px solid #dee2e6;
+}
+
+@media (max-width: 576px){
+    .border-gray {
+        border: 0;
+    }
+}
+
+.txt-shad{
+    text-shadow: 2px 2px rgb(200, 200, 200);
+}
+.bg-prf{
+    background-color: rgb(247, 247, 247);
+}
