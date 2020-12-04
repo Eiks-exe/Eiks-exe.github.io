@@ -846,8 +846,8 @@ pre code {
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
   max-width: 50%;
-  border: solid 1px limegreen;
-  background-color: white;
+  
+  
   margin: auto;
 }
 
