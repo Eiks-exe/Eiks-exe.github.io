@@ -1,187 +1,74 @@
-<!DOCTYPE html>
-<html lang="fr">
-
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You need me !</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="./ccs/index.css">
+    <title>eiks</title>
 </head>
 <!-- 127.0.0.1 release.gitkraken.com -->
-<body class="p-4">
-    <header class="container justify-content-center global-margin mt-5">
-        
-        <div class="row shadow-lg py-5 mb-5  bg-white rounded">
-            <div class=" p-0 mb-0">
-                <div class="row mx-4 mb-0 p-0">
-                    <h2 class="pb-0" style="color: blueviolet ;">
-                        Andy MORELLON<br />
-                        <small class="">Passionné par l'informatique</small>
-                    </h2>
-    
-                </div>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </div>
-            
-            <div class="col-sm-6 flex-column mx-4">
-                
-                <table class="table table-borderless border-left w-100 h-100">
-
-                    <tr>
-                        <td><strong>Age</strong></td>
-                        <td>21</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Addresse</strong></td>
-                        <td>Massonville Rivière-Pilote 9211</td>
-                    </tr>
-                    <tr>
-                        <td><strong>télephone</strong></td>
-                        <td>+596 696 456 212</td>
-                    </tr>
-                    <tr>
-                        <td><strong>mail </strong></td> <!-- -->
-                        <td><a href="mailto:a.morellon@outlook.com">a.morellon@outlook.com</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Permis </strong></td> <!-- -->
-                        <td>B</td>
-                    </tr>
-                    <!--
-                        
-                        <tr>
-                            <td><strong>Website </strong></td>
-                            <td><a href="#">www.eiks.me</a></td>
-                        </tr>
-                    -->
-                </table>
-                <div class="mask"
-                    style="background-color:blueviolet ;">
-                    <ul class="list-unstyled m-3">
-                        <li class="d-inline-block mx-3 my-3 rounded-circle shadow-lg">
-                            <a href="#">
-                                <i class="fa fa-twitter text-center ftra"></i>
-                            </a>
-                        </li>
-                        <li class="d-inline-block mx-3 my-3 rounded-circle shadow-lg">
-                            <a href="#">
-                                <i class="fa fa-github text-center" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="d-inline-block mx-3 my-3 rounded-circle shadow-lg">
-                            <a href="#">
-                                <i class="fa fa-linkedin text-center" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="d-inline-block mx-3 my-3 rounded-circle shadow-lg">
-                            <a href="#">
-                                <i class="fa fa-skype text-center" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="d-inline-block mx-3 my-3 rounded-circle shadow-lg">
-                            <a href="#">
-                                <i class="fa fa-instagram text-center" aria-hidden="true"></i>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-    </header>
-    <section class="container rounded-lg ">
-        <div class="d-flex flex-row justify-content-center">
-            <h2 class="" style="color:blueviolet;">Compétences</h2>
         </div>
-        <div class="row shadow-lg p-4 mb-5 mt-5 bg-white rounded-lg">
-            <div class="col-12 col-sm-6 text-center">
-                <h4 class="mb-4">A propos de moi</h4>
-                <p class="mx-auto mb-4">
-                    Depuis mon jeune âge je suis passionné par l'informatique et je n'ai cessé de m'y interesser.
-                    J'ai appris divers language de programmation informatique.
-                    Mais depuis peu j'ai été captivé par le développement web et je crois bien que je veux en faire ma profession
-                    j'ai donc étudié en auto-didacte afin d'aqcuerir des notions dans ce domaine (HTML, CSS, JavaScript).
-                </p>
-                <p>
-                    Concernant mes centres d'interêt, si a mes heures perdues je ne programme pas alors je dessine.
-                    Le dessin est pour moi une seconde passion, au départ j'ai voulu en faire une vocation mais mon interêt pour l'informatique s'est montrée plus forte.
-                    
-                </p>
-            </div>
-            <div class="col-sm-6 m-0 border-left">
-                <h4 class="mb-5 mt-1 text-center">Compétences Profesionnelles</h4>
-                <ul class="font-weight-bold" style="list-style-type: none;">
-                    <li class="mb-4 text-center border rounded-lg text-light p-1" style="background-color: blueviolet;">Réaliser une d'application web (Site web)</li>
-                    <li class="mb-4 text-center border rounded-lg text-light p-1" style="background-color: blueviolet;">Concevoire une maquette d'application web</li>
-                    <li class="mb-4 text-center border rounded-lg text-light p-1" style="background-color: blueviolet;">Planifier un budget (Excel)</li>
-                    <li class="mb-4 text-center border rounded-lg text-light p-1" style="background-color: blueviolet;">Concevoire un logo de marque</li>
-                    <li class="mb-4 text-center border rounded-lg text-light p-1" style="background-color: blueviolet;">Mettre en place une charte graphique</li>
-                </ul>   
+    </nav>
+    <div id="content">
+
+
+        <div class="all text-white">
+            <div class="text-white display-1 col-sm-6">hi, im eiks</div>
+            <div class="square">
 
             </div>
         </div>
-
-    </section>
-    <section class="container">
-        <div class="text-center">
-            <h2 class="" style="color:blueviolet;">Formations</h2>
-        </div>
-
-        <div class="col p-0 m-0">
-            <div class="row">
-                <div class="col-12 col-sm-6 shadow-lg text-center">
-                    <div class="p-0 m-2 rounded text-white " style="background-color:blueviolet;">2020
-                    </div>
-                    <h5>
-                        Diplôme national des arts
-                        <small class="">
-                            <p>1ere année Campus caraibéen des arts</p>
-                        </small>
-                    </h5>
-
-                </div>
-                <div class="col-12 col-sm-6 shadow-lg text-center">
-                    <div class="p-0 m-2 rounded text-white " style="background-color:blueviolet;">2020
-                    </div>
-                    <h5>
-                        Certificat Sauveteur secouriste du travail (SST)
-                        <small class="">
-                            <p> Formations Sauveteur secouriste du travail</p>
-                        </small>
-                    </h5>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-sm-6 shadow-lg text-center mt-4 ">
-                    <div class="p-0 m-2 rounded text-white" style="background-color:blueviolet;">
-                        2017-2019
-                    </div>
-                    <h5>
-                        Classe préparatoire aux grandes écoles </br>
-                        <br class="">
-                            Lycée Joseph Gaillard</br>
-                            (séjour linguitistique de trois semaines à Édimbourg en Ecosse)
-                        </small>
-                    </h5>
-
-                </div>
-                <div class="col-12 col-sm-6 shadow-lg text-center mt-4 ">
-                    <div class="p-0 m-2 rounded text-white" style="background-color:blueviolet;">2017
-                    </div>
-                    <h5>
-                        Baccalauréat Mention bien </br>
-                        <small class="">Spécialité SIN Lycée Joseph ZOBEL</small>
-                    </h5>
-                </div>
+        <header></header>
+        <div class="all2 text-white">
+            <div class="text-white display-1 col-sm-6">hi, im eiks</div>
+            <div class="square">
 
             </div>
-
         </div>
+        <div class="all3 text-white">
+            <div class="text-white display-1 col-sm-6">hi, im eiks</div>
+            <div class="square">
 
-    </section>
-
-    <footer></footer>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>
-<link rel="stylesheet" href="ccs/bootstrap.min.css">
-<link rel="stylesheet" href="ccs/style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
