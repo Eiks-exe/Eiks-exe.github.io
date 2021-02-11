@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f37f9239-34ad-4493-9c92-444ad846c728" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv.html" beforeDir="false" afterPath="$PROJECT_DIR$/cv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccs/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/ccs/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ccs/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/ccs/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv.html" beforeDir="false" afterPath="$PROJECT_DIR$/ressource/view/cv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +48,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Sites\Andy\Eiks-exe.github.io" />
+      <recent name="C:\Sites\Andy\Eiks-exe.github.io\ressource\view" />
       <recent name="C:\Sites\Andy\eiksdev\public" />
       <recent name="C:\Sites\Andy\eiksdev\src\scss" />
     </key>
@@ -60,10 +65,25 @@
       <workItem from="1611146757010" duration="21386000" />
       <workItem from="1611175174330" duration="438000" />
       <workItem from="1611862012061" duration="2326000" />
+      <workItem from="1612899814184" duration="2968000" />
+      <workItem from="1612969269965" duration="3887000" />
+      <workItem from="1613053782124" duration="3394000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
