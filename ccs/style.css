@@ -62,11 +62,11 @@ li:hover i {
     transition: 500ms;
 }
 
-.vrounded{
+.vrounded {
     border-radius: 5%;
 }
 
-.mask{
+.mask {
     display: none;
 }
 progress[value]{
