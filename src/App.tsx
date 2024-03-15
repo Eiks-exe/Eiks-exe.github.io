@@ -6,9 +6,9 @@ import Home from './pages/PageHome/PageHome';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/my-website" element={<Home />} />
     </Routes>
   );
 }
 
-export default App;
+export default App; 
