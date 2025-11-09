@@ -1,8 +1,14 @@
 .Layout{
  min-height: 100vh;
- padding: 20px 30px 10px; 
+ padding: 10px 50px 10px; 
 }
-
+.Layout > .container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .dark{
   background: black;
   color: white;

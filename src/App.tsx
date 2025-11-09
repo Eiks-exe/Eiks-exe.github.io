@@ -1,18 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { HomeHeader } from './Components/HomeHeader'
 import { LayoutContextProvider } from './contexts/LayoutContext'
 import { Layout } from './Components/Layout'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <LayoutContextProvider>
     <Layout>
-        <HomeHeader subtitle='software engineer'/>
+        <div className="hero">
+          <div className="left">
+            <p className="bio">
+              Enginneer at heart and artist in practice, 
+              I chase mastery in everything I do. 
+              That include building systems that combine technical depth with expressive visuals and 
+              turning effort into work that feels both powerful and precise.
+            </p>
+          </div>
+
+        </div>
     </Layout>
     </LayoutContextProvider>
   )

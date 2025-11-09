@@ -15,6 +15,10 @@ export const HomeHeader = ({title = "Andy Morellon,", subtitle}: HomeHeaderProps
           {subtitle}
         </h2>
       </div>
+      <div className="nav-container">
+        <a href="" className="nav-links">about</a>
+        <a href="" className="nav-links nav-btn">contact</a>
+      </div>
     </div>
   )
 }
