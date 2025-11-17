@@ -1,0 +1,128 @@
+@use "../../utils/utils.scss" as *;
+
+.projects {
+  width: 100%;
+  text-align: center;
+  @include grid(1);
+  h2 {
+    font-size:2rem;
+    margin: 1.5rem;
+    text-align: center;
+  }
+
+  .project {
+    min-height: 100vh;
+    @include grid(1, 5rem);
+    @include respond(lg) {
+      @include grid(2);
+      padding: 10rem 0 0 0;
+    }
+    .scene {
+      perspective: 800px;
+      transform-origin: 0 0;
+      opacity: 1;
+      margin: 0 auto;
+      @include respond(lg) {
+        animation: travel-reveal linear both;
+        animation-timeline: view();
+        margin-top: 10rem;
+        margin: 10rem 0 0 0;
+      }
+      .card{
+        position: relative;
+        height: 300px;
+        width: clamp(150px, 20vw, 450px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #FF3;
+        border-radius: 0.5rem;
+        transform-style: preserve-3d;
+        transform: rotateY(-20deg) rotateX(10deg);
+        z-index: 5;
+        img {
+          border-radius: 5rem;
+          width: 100px;
+          height: 100px;
+          z-index: 5;
+        }
+        .techContainer{
+          position: absolute;
+          display: none;
+          justify-content: center;
+          gap:2rem;
+          z-index: 0;
+          transform: translateZ(-1px);
+          animation: tech-reveal linear both;
+          animation-timeline: view();
+          .card:hover{
+            background: #333;
+          }
+        }
+        .techIcon {
+          width: 100%;
+          text-align: center;
+          font-size: 2rem; /* or use actual SVG/images */
+          z-index: 0; /* behind parent */
+        }
+      }
+    }
+    .description {
+      margin-top: 10rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .tagline{
+        font-style: italic;
+      }
+      ul {
+        text-align: left;
+      }
+.links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      a {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        background: #222;
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+
+        &:hover {
+          background: #444;
+        }
+      }
+    }
+    }
+  }
+}
+
+
+@keyframes travel-reveal {
+  from {
+    opacity: 0;
+    display: none;
+    transform: translateX(900px);
+  }
+  20% {
+    opacity: 1;
+    display: inline-block;
+    transform: translateX(300px)
+  }
+}
+
+@keyframes tech-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(400px)
+  }
+}
+

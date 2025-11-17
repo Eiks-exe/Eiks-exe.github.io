@@ -1,19 +1,20 @@
 import type { ReactNode } from "react";
-import "./layout.css"
+import "./Layout.scss";
 import { useLayoutContext } from "../../contexts/LayoutContext";
 import { HomeHeader } from "../HomeHeader";
 interface LayoutProps {
-  children?: ReactNode; 
+  children?: ReactNode;
 }
 
-export const Layout = ({children} : LayoutProps) => {
-  const { theme, setTheme } = useLayoutContext()
+export const Layout = ({ children }: LayoutProps) => {
+  const { theme, setTheme } = useLayoutContext();
   return (
     <div className={`Layout ${theme}`}>
-      <div className="container">
-        <HomeHeader subtitle='software engineer'/>
+        <HomeHeader/>
         {children}
-      </div>
-    </div> 
-  )
-}
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+    </div>
+  );
+};

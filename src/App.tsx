@@ -1,26 +1,37 @@
-import './App.css'
-import { LayoutContextProvider } from './contexts/LayoutContext'
-import { Layout } from './Components/Layout'
+import "./App.scss";
+import { LayoutContextProvider, useLayoutContext } from "./contexts/LayoutContext";
+import { Layout } from "./Components/Layout";
+import React, { type JSX } from "react";
+import { About } from "./views/About";
+import { Contact } from "./views/Contact";
+import { Home } from "./views/Home";
 
-function App() {
+function AppContent() {
+  const { view, setView } = useLayoutContext();
 
-  return (
-    <LayoutContextProvider>
-    <Layout>
-        <div className="hero">
-          <div className="left">
-            <p className="bio">
-              Enginneer at heart and artist in practice, 
-              I chase mastery in everything I do. 
-              That include building systems that combine technical depth with expressive visuals and 
-              turning effort into work that feels both powerful and precise.
-            </p>
-          </div>
+  const views :Record<string, JSX.Element> = {
+    home: <Home />,
+    about: <About />,
+    contact: <Contact />
+  };
 
-        </div>
-    </Layout>
-    </LayoutContextProvider>
-  )
+  React.useEffect(() => {
+    const urlView = window.location.href.split("/").pop();
+    if(!urlView) return;
+    setView(urlView);
+  }, [setView]);
+
+  const CurrentView = views[view] ?? <Home />;
+
+  return <Layout>{CurrentView}</Layout>;
 }
 
-export default App
+function App() {
+  return (
+    <LayoutContextProvider>
+      <AppContent />
+    </LayoutContextProvider>
+  );
+}
+
+export default App;

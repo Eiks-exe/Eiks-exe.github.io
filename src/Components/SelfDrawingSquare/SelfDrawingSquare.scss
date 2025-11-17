@@ -1,0 +1,106 @@
+@use "sass:math";
+@use "../../utils/utils.scss" as u; 
+$faces: front, back, left, right, top, bottom;
+$cube-size: 250px;
+    
+@each $face in $faces {
+  .cube__#{$face} {
+    position: absolute;
+    width: $cube-size;
+    height: $cube-size;
+    background: rgba(math.random(255), math.random(255), math.random(255), 0.1);
+    transform: if(
+      $face == front,
+      translateZ(math.div($cube-size, 2)),
+      if(
+        $face == back,
+        translateZ(math.div(-$cube-size, 2)),
+        if(
+          $face == left,
+          rotateY(-90deg) translateZ(math.div($cube-size, 2)),
+          if(
+            $face == right,
+            rotateY(90deg) translateZ(math.div($cube-size, 2)),
+            if(
+              $face == top,
+              rotateX(90deg) translateZ(math.div($cube-size, 2)),
+              rotateX(-90deg) translateZ(math.div($cube-size, 2))
+            )
+          )
+        )
+      )
+    );
+  }
+}
+
+.scene {
+  height: 100%;
+  width: 100%;
+  perspective: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:0;
+  right: 0%;
+
+  z-index: -1;
+  @include u.respond(lg){
+    width:50%;
+    right: 5%;
+  }
+}
+
+.cube {
+  position: relative;
+  width: $cube-size;
+  height: $cube-size;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(20deg);
+  animation: spin 20s infinite linear;
+  margin: 100px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(-20deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(340deg) rotateY(360deg);
+  }
+}
+
+line {
+  stroke: #51af;
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation-name: draw;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+  fill: white;
+}
+
+svg {
+  width: $cube-size;
+  height: $cube-size;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(100px); 
+}
+
+@for $i from 1 to 12 {
+  .line_#{$i} {
+    animation-delay: $i * 900ms;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+

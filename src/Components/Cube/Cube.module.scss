@@ -1,0 +1,347 @@
+:root {
+  --color1: black;
+  --color2: black;
+  --color3: black;
+  --cube-size: 200px;
+
+  --normals-camera-x: 0;
+  --normals-camera-y: 0;
+  --normals-camera-z: 1; /* Changed from -1 to 1 */
+
+  --normals-front-x: 0;
+  --normals-front-y: 0;
+  --normals-front-z: 1;
+  --normals-back-x: 0;
+  --normals-back-y: 0;
+  --normals-back-z: -1;
+  --normals-right-x: 1;
+  --normals-right-y: 0;
+  --normals-right-z: 0;
+  --normals-left-x: -1;
+  --normals-left-y: 0;
+  --normals-left-z: 0;
+  --normals-top-x: 0;
+  --normals-top-y: 1;
+  --normals-top-z: 0;
+  --normals-bottom-x: 0;
+  --normals-bottom-y: -1;
+  --normals-bottom-z: 0;
+
+  --inX: 0;
+  --inY: 0;
+
+  --inZ: 0;
+
+  --rotX: mod(var(--inX), 360);
+  --rotY: mod(var(--inY), 360);
+  --rotZ: mod(var(--inZ), 360);
+  --rad: calc(3.14 / 180);
+
+  --xRot: calc(var(--rotX) * 1deg);
+  --yRot: calc(var(--rotY) * 1deg);
+  --zRot: calc(var(--rotZ) * 1deg);
+
+  --front-y1: calc(
+    (var(--normals-front-y) * cos(var(--xRot))) -
+      (var(--normals-front-z) * sin(var(--xRot)))
+  );
+  --front-z1: calc(
+    var(--normals-front-y) * sin(var(--xRot)) + var(--normals-front-z) *
+      cos(var(--xRot))
+  );
+  --front-x2: calc(
+    var(--normals-front-x) * cos(var(--yRot)) + var(--front-z1) *
+      sin(var(--yRot))
+  );
+  --front-z2: calc(
+    var(--normals-front-x) * -1 * sin(var(--yRot)) + var(--front-z1) *
+      cos(var(--yRot))
+  );
+  --front-x3: calc(
+    var(--front-x2) * cos(var(--zRot)) - var(--front-y1) * sin(var(--zRot))
+  );
+  --front-y3: calc(
+    var(--front-x2) * sin(var(--zRot)) + var(--front-y1) * cos(var(--zRot))
+  );
+  --front-x: var(--front-x3);
+  --front-y: var(--front-y3);
+  --front-z: var(--front-z2);
+
+  --back-y1: calc(
+    (var(--normals-back-y) * cos(var(--xRot))) -
+      (var(--normals-back-z) * sin(var(--xRot)))
+  );
+  --back-z1: calc(
+    var(--normals-back-y) * sin(var(--xRot)) + var(--normals-back-z) *
+      cos(var(--xRot))
+  );
+  --back-x2: calc(
+    var(--normals-back-x) * cos(var(--yRot)) + var(--back-z1) * sin(var(--yRot))
+  );
+  --back-z2: calc(
+    var(--normals-back-x) * -1 * sin(var(--yRot)) + var(--back-z1) *
+      cos(var(--yRot))
+  );
+  --back-x3: calc(
+    var(--back-x2) * cos(var(--zRot)) - var(--back-y1) * sin(var(--zRot))
+  );
+  --back-y3: calc(
+    var(--back-x2) * sin(var(--zRot)) + var(--back-y1) * cos(var(--zRot))
+  );
+  --back-x: var(--back-x3);
+  --back-y: var(--back-y3);
+  --back-z: var(--back-z2);
+
+  --right-y1: calc(
+    (var(--normals-right-y) * cos(var(--xRot))) -
+      (var(--normals-right-z) * sin(var(--xRot)))
+  );
+  --right-z1: calc(
+    var(--normals-right-y) * sin(var(--xRot)) + var(--normals-right-z) *
+      cos(var(--xRot))
+  );
+  --right-x2: calc(
+    var(--normals-right-x) * cos(var(--yRot)) + var(--right-z1) *
+      sin(var(--yRot))
+  );
+  --right-z2: calc(
+    var(--normals-right-x) * -1 * sin(var(--yRot)) + var(--right-z1) *
+      cos(var(--yRot))
+  );
+  --right-x3: calc(
+    var(--right-x2) * cos(var(--zRot)) - var(--right-y1) * sin(var(--zRot))
+  );
+  --right-y3: calc(
+    var(--right-x2) * sin(var(--zRot)) + var(--right-y1) * cos(var(--zRot))
+  );
+  --right-x: var(--right-x3);
+  --right-y: var(--right-y3);
+  --right-z: var(--right-z2);
+
+  --left-y1: calc(
+    (var(--normals-left-y) * cos(var(--xRot))) -
+      (var(--normals-left-z) * sin(var(--xRot)))
+  );
+  --left-z1: calc(
+    var(--normals-left-y) * sin(var(--xRot)) + var(--normals-left-z) *
+      cos(var(--xRot))
+  );
+  --left-x2: calc(
+    var(--normals-left-x) * cos(var(--yRot)) + var(--left-z1) * sin(var(--yRot))
+  );
+  --left-z2: calc(
+    var(--normals-left-x) * -1 * sin(var(--yRot)) + var(--left-z1) *
+      cos(var(--yRot))
+  );
+  --left-x3: calc(
+    var(--left-x2) * cos(var(--zRot)) - var(--left-y1) * sin(var(--zRot))
+  );
+  --left-y3: calc(
+    var(--left-x2) * sin(var(--zRot)) + var(--left-y1) * cos(var(--zRot))
+  );
+  --left-x: var(--left-x3);
+  --left-y: var(--left-y3);
+  --left-z: var(--left-z2);
+
+  --top-y1: calc(
+    (var(--normals-top-y) * cos(var(--xRot))) -
+      (var(--normals-top-z) * sin(var(--xRot)))
+  );
+  --top-z1: calc(
+    var(--normals-top-y) * sin(var(--xRot)) + var(--normals-top-z) *
+      cos(var(--xRot))
+  );
+  --top-x2: calc(
+    var(--normals-top-x) * cos(var(--yRot)) + var(--top-z1) * sin(var(--yRot))
+  );
+  --top-z2: calc(
+    var(--normals-top-x) * -1 * sin(var(--yRot)) + var(--top-z1) *
+      cos(var(--yRot))
+  );
+  --top-x3: calc(
+    var(--top-x2) * cos(var(--zRot)) - var(--top-y1) * sin(var(--zRot))
+  );
+  --top-y3: calc(
+    var(--top-x2) * sin(var(--zRot)) + var(--top-y1) * cos(var(--zRot))
+  );
+  --top-x: var(--top-x3);
+  --top-y: var(--top-y3);
+  --top-z: var(--top-z2);
+
+  --bottom-y1: calc(
+    (var(--normals-bottom-y) * cos(var(--xRot))) -
+      (var(--normals-bottom-z) * sin(var(--xRot)))
+  );
+  --bottom-z1: calc(
+    var(--normals-bottom-y) * sin(var(--xRot)) + var(--normals-bottom-z) *
+      cos(var(--xRot))
+  );
+  --bottom-x2: calc(
+    var(--normals-bottom-x) * cos(var(--yRot)) + var(--bottom-z1) *
+      sin(var(--yRot))
+  );
+  --bottom-z2: calc(
+    var(--normals-bottom-x) * -1 * sin(var(--yRot)) + var(--bottom-z1) *
+      cos(var(--yRot))
+  );
+  --bottom-x3: calc(
+    var(--bottom-x2) * cos(var(--zRot)) - var(--bottom-y1) * sin(var(--zRot))
+  );
+  --bottom-y3: calc(
+    var(--bottom-x2) * sin(var(--zRot)) + var(--bottom-y1) * cos(var(--zRot))
+  );
+  --bottom-x: var(--bottom-x3);
+  --bottom-y: var(--bottom-y3);
+  --bottom-z: var(--bottom-z2);
+
+  /*    normalise "function"  */
+  --magnitude-cam: sqrt(
+    calc(
+      (var(--normals-camera-x) * var(--normals-camera-x)) +
+        (var(--normals-camera-y) * var(--normals-camera-y)) +
+        (var(--normals-camera-z) * var(--normals-camera-z))
+    )
+  );
+  --normalised-cam-x: var(--normals-camera-x) / var(--magnitude-cam);
+  --normalised-cam-y: var(--normals-camera-y) / var(--magnitude-cam);
+  --normalised-cam-z: var(--normals-camera-z) / var(--magnitude-cam);
+
+  /*    dot product "function"  */
+  --dot-prod-front: calc(
+    (var(--normals-camera-x) * var(--front-x)) +
+      (var(--normals-camera-y) * var(--front-y)) +
+      (var(--normals-camera-z) * var(--front-z))
+  );
+  --dot-prod-back: calc(
+    (var(--normals-camera-x) * var(--back-x)) +
+      (var(--normals-camera-y) * var(--back-y)) +
+      (var(--normals-camera-z) * var(--back-z))
+  );
+  --dot-prod-right: calc(
+    (var(--normals-camera-x) * var(--right-x)) +
+      (var(--normals-camera-y) * var(--right-y)) +
+      (var(--normals-camera-z) * var(--right-z))
+  );
+  --dot-prod-left: calc(
+    (var(--normals-camera-x) * var(--left-x)) +
+      (var(--normals-camera-y) * var(--left-y)) +
+      (var(--normals-camera-z) * var(--left-z))
+  );
+  --dot-prod-top: calc(
+    (var(--normals-camera-x) * var(--top-x)) +
+      (var(--normals-camera-y) * var(--top-y)) +
+      (var(--normals-camera-z) * var(--top-z))
+  );
+  --dot-prod-bottom: calc(
+    (var(--normals-camera-x) * var(--bottom-x)) +
+      (var(--normals-camera-y) * var(--bottom-y)) +
+      (var(--normals-camera-z) * var(--bottom-z))
+  );
+
+  /* display switches */
+  --X-above-90: Min(1, Max(calc(var(--rotX) - 90), 0));
+  --X-below-90: calc(1 - var(--X-above-90));
+  --X-above-270: Min(1, Max(calc(var(--rotX) - 270), 0));
+  --X-below-270: calc(1 - var(--X-above-270));
+  --X-between-90-270: Max(0, 1 - Max(var(--X-below-90), var(--X-above-270)));
+  --X-Not-between-90-270: calc(1 - var(--X-between-90-270));
+
+  --Y-above-90: Min(1, Max(calc(var(--rotY) - 90), 0));
+  --Y-below-90: calc(1 - var(--Y-above-90));
+  --Y-above-270: Min(1, Max(calc(var(--rotY) - 270), 0));
+  --Y-below-270: calc(1 - var(--Y-above-270));
+  --Y-between-90-270: Max(0, 1 - Max(var(--Y-below-90), var(--Y-above-270)));
+  --Y-Not-between-90-270: calc(1 - var(--Y-between-90-270));
+
+  --show-front: Min(
+    1,
+    Max(calc(var(--dot-prod-front) * 100 - var(--dot-prod-back) * 100), 0)
+  );
+  --show-back: calc(1 - var(--show-front));
+  --show-right-dot: Min(
+    1,
+    Max(calc(var(--dot-prod-right) * 100 - var(--dot-prod-left) * 100), 0)
+  );
+  --show-left-dot: calc(1 - var(--show-right-dot));
+  --show-right: calc(
+    var(--show-right-dot) * var(--X-Not-between-90-270) + var(--show-left-dot) *
+      var(--X-between-90-270)
+  );
+  --show-left: calc(1 - var(--show-right));
+  --show-top-dot: Min(
+    1,
+    Max(calc(var(--dot-prod-top) * 100 - var(--dot-prod-bottom) * 100), 0)
+  );
+  --show-bottom-dot: calc(1 - var(--show-top-dot));
+  --show-top: calc(
+    var(--show-top-dot) * var(--Y-Not-between-90-270) + var(--show-bottom-dot) *
+      var(--Y-between-90-270)
+  );
+  --show-bottom: calc(1 - var(--show-top));
+}
+.scene {
+  background-color: black;
+  width: 100%;
+  perspective: 1500px;
+}
+
+.cube {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  transform-style: preserve-3d;
+  background: var(--color1);
+  transform: translate(-50%, -50%) rotateX(calc(var(--rotX) * 1deg))
+    rotateY(calc(var(--rotY) * 1deg)) rotateZ(calc(var(--rotZ) * 1deg))
+    translateZ(
+      calc((var(--show-front) - var(--show-back)) * var(--cube-size) * 0.5)
+    );
+}
+
+/* Side face (using ::before) – we want it to follow the same computed offset as the cube */
+.cube::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  transform-style: preserve-3d;
+  transform: translate(-50%, 0%)
+    translateZ(
+      calc(-1 * (var(--show-front) - var(--show-back)) * var(--cube-size) / 2)
+    )
+    rotateY(90deg) translateZ(calc(var(--show-right) * var(--cube-size)));
+  background: var(--color2);
+}
+
+/* Top face (using ::after) – again, include the computed offset */
+.cube::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  transform-style: preserve-3d;
+  transform: translate(0%, -50%) /* Compensate for main cube's Z translation */
+    translateZ(
+      calc(-1 * (var(--show-front) - var(--show-back)) * var(--cube-size) / 2)
+    )
+    /* Position top face */ rotateX(-90deg)
+    translateZ(calc(var(--show-top) * var(--cube-size)));
+  background: var(--color3);
+}
+
+.cube,
+.cube::after,
+.cube::before {
+  background: repeating-linear-gradient(
+    #000,
+    #000 20px,
+    #ffff 20px,
+    #ffff 25px
+  );
+}
