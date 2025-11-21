@@ -1,9 +1,5 @@
-import type React from "react";
 import "./SelfDrawingSquare.scss";
-interface sdsProps {
-  children?: React.ReactNode[];
-}
-export const SelfDrawingSquare = ({children}: sdsProps) => {
+export const SelfDrawingSquare = () => {
   return (
     <div className="scene">
       <div className="cube">

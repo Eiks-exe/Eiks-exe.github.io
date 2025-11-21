@@ -1,5 +1,5 @@
-@use '../../utils/variables' as v ;
-@use '../../utils/utils.scss' as *;
+@use "../../utils/variables" as v;
+@use "../../utils/utils.scss" as *;
 .homeHeaderContainer {
   width: 100%;
   height: 20%;
@@ -7,13 +7,16 @@
   display: flex;
   justify-content: center;
   z-index: 2;
-  @include respond(lg){
+  @include respond(lg) {
     width: 70vw;
     justify-content: space-between;
     align-items: center;
   }
 }
-title-container > .title {
+.title-container {
+  cursor: pointer;
+}
+.title-container > .title {
   font-weight: 600;
 }
 .title-container > .subtitle {
@@ -36,11 +39,9 @@ title-container > .title {
   text-decoration: none;
   color: white;
   text-align: center;
+  cursor: pointer !important;
 }
 
-.nav-links:visited {
-  color: white;
-}
 
 @media (min-width: 1200px) {
   .title-container > .title {

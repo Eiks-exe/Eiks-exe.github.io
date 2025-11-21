@@ -1,11 +1,3 @@
-
-
-
-
-export const Github = ()=>{
-  return (
-    <div className="icon">
-      
-    </div>
-  )
-}
+export const Github = () => {
+  return <div className="icon"></div>;
+};

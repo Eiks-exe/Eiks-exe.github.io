@@ -7,14 +7,15 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
+  //@ts-ignore
   const { theme, setTheme } = useLayoutContext();
   return (
     <div className={`Layout ${theme}`}>
-        <HomeHeader/>
-        {children}
-        <div className="wave"></div>
-        <div className="wave"></div>
-        <div className="wave"></div>
+      <HomeHeader />
+      {children}
+      <div className="wave"></div>
+      <div className="wave"></div>
+      <div className="wave"></div>
     </div>
   );
 };

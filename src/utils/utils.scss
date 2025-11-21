@@ -3,20 +3,27 @@ $md: 768px;
 $lg: 1024px;
 $xl: 1440px;
 
-$app-max-width: clamp(80vw , calc(50% + 2rem) , calc(90vw)) ;
+$app-max-width: clamp(80vw, calc(50% + 2rem), calc(90vw));
 // Media query mixin
 @mixin respond($breakpoint) {
   @if $breakpoint == sm {
-    @media (min-width: $sm) { @content; }
+    @media (min-width: $sm) {
+      @content;
+    }
   } @else if $breakpoint == md {
-    @media (min-width: $md) { @content; }
+    @media (min-width: $md) {
+      @content;
+    }
   } @else if $breakpoint == lg {
-    @media (min-width: $lg) { @content; }
+    @media (min-width: $lg) {
+      @content;
+    }
   } @else if $breakpoint == xl {
-    @media (min-width: $xl) { @content; }
+    @media (min-width: $xl) {
+      @content;
+    }
   }
 }
-
 
 @mixin grid($cols: 2, $gap: 0rem) {
   display: grid;
